@@ -1,0 +1,5 @@
+# Redirect rules for Netlify
+/*    /index.html   200
+
+# Force HTTPS
+http://awsearchpro.netlify.app/*    https://awsearchpro.netlify.app/:splat    301!
