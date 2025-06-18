@@ -1,0 +1,973 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-secondary-800 dark:text-white scroll-smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl leading-tight;
+  }
+  p {
+    @apply leading-relaxed;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+  
+  /* Premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-50 dark:bg-brand-midnight-blue;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-royal-blue rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-oxford-blue;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+  
+  /* Premium Button System */
+  .btn {
+    @apply inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 transform hover:scale-105 relative overflow-hidden shadow-lg;
+    padding: clamp(0.75rem, 1.5vw, 0.875rem) clamp(1.25rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    min-height: 44px;
+  }
+  
+  .btn-primary {
+    @apply btn bg-brand-royal-blue text-white hover:bg-brand-oxford-blue focus:ring-brand-royal-blue shadow-brand hover:shadow-2xl;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-brand-steel-navy text-white hover:bg-brand-midnight-blue focus:ring-brand-steel-navy shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-brand-deep-blue text-brand-deep-blue hover:bg-brand-deep-blue hover:text-white focus:ring-brand-deep-blue dark:border-brand-sky-blue dark:text-brand-sky-blue dark:hover:bg-brand-sky-blue dark:hover:text-brand-midnight-blue;
+  }
+
+  /* Premium Section System */
+  .section {
+    padding: clamp(2.5rem, 5vw, 4rem) 0;
+  }
+
+  .section-compact {
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  }
+
+  .section-title {
+    @apply mb-8 text-center;
+  }
+
+  .section-title h2 {
+    @apply mb-4 text-secondary-900 dark:text-white;
+    font-size: clamp(1.875rem, 3.5vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .section-title p {
+    @apply max-w-3xl mx-auto text-secondary-600 dark:text-secondary-300;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+  
+  /* RESPONSIVE CARD LAYOUT SYSTEM - UPDATED SPECIFICATIONS */
+  
+  /* Base Card Styling */
+  .responsive-card {
+    @apply bg-white dark:bg-brand-steel-navy rounded-xl shadow-lg transition-all duration-300 border border-transparent relative overflow-hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .responsive-card:hover {
+    @apply shadow-2xl border-brand-sky-blue/20;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  /* DESKTOP VIEW (min-width: 1024px) - 4 CARDS PER ROW */
+  @media (min-width: 1024px) {
+    .responsive-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin: 0 16px;
+    }
+    
+    .responsive-card {
+      padding: 20px;
+      aspect-ratio: 1;
+      min-height: 200px;
+      max-height: 240px;
+      width: 100%;
+    }
+    
+    .responsive-card .card-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 14px;
+    }
+    
+    .responsive-card .card-title {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    
+    .responsive-card .card-description {
+      font-size: 0.8125rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+    
+    .responsive-card .card-value {
+      font-size: 2rem;
+      margin-bottom: 6px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+  }
+
+  /* TABLET VIEW (min-width: 768px and max-width: 1023px) - 2 CARDS PER ROW */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .responsive-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 0 16px;
+    }
+    
+    .responsive-card {
+      padding: 16px;
+      aspect-ratio: 1;
+      min-height: 180px;
+      max-height: 220px;
+      width: 100%;
+    }
+    
+    .responsive-card .card-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+    }
+    
+    .responsive-card .card-title {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    
+    .responsive-card .card-description {
+      font-size: 0.8125rem;
+      line-height: 1.3;
+      margin: 0;
+    }
+    
+    .responsive-card .card-value {
+      font-size: 2rem;
+      margin-bottom: 6px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+  }
+
+  /* MOBILE VIEW (max-width: 767px) - 1 CARD PER ROW */
+  @media (max-width: 767px) {
+    .responsive-card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 0 16px;
+    }
+    
+    .responsive-card {
+      padding: 16px;
+      width: 100%;
+      min-height: 160px;
+      max-height: 200px;
+      aspect-ratio: 2;
+    }
+    
+    .responsive-card .card-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 10px;
+    }
+    
+    .responsive-card .card-title {
+      font-size: 0.9375rem;
+      margin-bottom: 6px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    
+    .responsive-card .card-description {
+      font-size: 0.75rem;
+      line-height: 1.25;
+      margin: 0;
+    }
+    
+    .responsive-card .card-value {
+      font-size: 1.75rem;
+      margin-bottom: 4px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+  }
+
+  /* SMOOTH TRANSITIONS BETWEEN BREAKPOINTS */
+  .responsive-card-grid {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .responsive-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ACHIEVEMENT CARDS SPECIFIC LAYOUT - OPTIMIZED SPACING */
+  .achievement-grid {
+    display: grid;
+    gap: 16px;
+    margin: 0 16px;
+  }
+
+  /* Desktop: 2 cards per row */
+  @media (min-width: 1024px) {
+    .achievement-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    
+    .achievement-card {
+      padding: 20px;
+      aspect-ratio: 2;
+      min-height: 140px;
+      max-height: 180px;
+    }
+  }
+
+  /* Tablet: 2 cards per row */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .achievement-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .achievement-card {
+      padding: 16px;
+      aspect-ratio: 1.8;
+      min-height: 120px;
+      max-height: 160px;
+    }
+  }
+
+  /* Mobile: 1 card per row */
+  @media (max-width: 767px) {
+    .achievement-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .achievement-card {
+      padding: 16px;
+      aspect-ratio: 2.5;
+      min-height: 100px;
+      max-height: 140px;
+    }
+  }
+
+  /* Achievement Card Base Styling - OPTIMIZED SPACING */
+  .achievement-card {
+    @apply bg-white dark:bg-brand-steel-navy rounded-xl shadow-lg transition-all duration-300 border border-transparent relative overflow-hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+  }
+
+  .achievement-card:hover {
+    @apply shadow-2xl border-brand-sky-blue/20;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  /* OPTIMIZED CONTENT SPACING INSIDE ACHIEVEMENT CARDS */
+  .achievement-card .flex {
+    gap: clamp(0.75rem, 2vw, 1rem);
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .achievement-card .flex-shrink-0 {
+    margin-top: 0;
+  }
+
+  .achievement-card .flex-grow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(0.25rem, 0.5vw, 0.5rem);
+  }
+
+  .achievement-card h4 {
+    margin-bottom: clamp(0.25rem, 0.5vw, 0.375rem);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.3;
+  }
+
+  .achievement-card p {
+    margin: 0;
+    font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+    line-height: 1.3;
+  }
+
+  /* EXPERTISE CARDS SPECIFIC LAYOUT - 4-2-1 RESPONSIVE SYSTEM */
+  .expertise-grid {
+    display: grid;
+    gap: 16px;
+    margin: 0 16px;
+  }
+
+  /* Desktop: 4 cards per row */
+  @media (min-width: 1024px) {
+    .expertise-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    
+    .expertise-card {
+      padding: 20px;
+      aspect-ratio: 1;
+      min-height: 200px;
+      max-height: 240px;
+    }
+  }
+
+  /* Tablet: 2 cards per row */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .expertise-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .expertise-card {
+      padding: 16px;
+      aspect-ratio: 1;
+      min-height: 180px;
+      max-height: 220px;
+    }
+  }
+
+  /* Mobile: 1 card per row */
+  @media (max-width: 767px) {
+    .expertise-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .expertise-card {
+      padding: 16px;
+      aspect-ratio: 2;
+      min-height: 160px;
+      max-height: 200px;
+    }
+  }
+
+  /* Expertise Card Base Styling */
+  .expertise-card {
+    @apply bg-white dark:bg-brand-steel-navy rounded-xl shadow-lg transition-all duration-300 border border-transparent relative overflow-hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .expertise-card:hover {
+    @apply shadow-2xl border-brand-sky-blue/20;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  /* INDUSTRIES CARDS SPECIFIC LAYOUT - 3-2-1 RESPONSIVE SYSTEM */
+  .industries-grid {
+    display: grid;
+    gap: 16px;
+    margin: 0 16px;
+  }
+
+  /* Desktop: 3 cards per row */
+  @media (min-width: 1024px) {
+    .industries-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    
+    .industry-card {
+      padding: 20px;
+      aspect-ratio: 1;
+      min-height: 200px;
+      max-height: 240px;
+    }
+  }
+
+  /* Tablet: 2 cards per row */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .industries-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .industry-card {
+      padding: 16px;
+      aspect-ratio: 1;
+      min-height: 180px;
+      max-height: 220px;
+    }
+  }
+
+  /* Mobile: 1 card per row */
+  @media (max-width: 767px) {
+    .industries-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .industry-card {
+      padding: 16px;
+      aspect-ratio: 2;
+      min-height: 160px;
+      max-height: 200px;
+    }
+  }
+
+  /* Industry Card Base Styling */
+  .industry-card {
+    @apply bg-white dark:bg-brand-steel-navy rounded-xl shadow-lg transition-all duration-300 border border-transparent relative overflow-hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .industry-card:hover {
+    @apply shadow-2xl border-brand-sky-blue/20;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  /* TRUSTED BRANDS LOGO GRID - 5-2-1 RESPONSIVE SYSTEM */
+  .brand-logo-grid {
+    display: grid;
+    gap: 16px;
+    margin: 0 16px;
+  }
+
+  /* Desktop: 5 cards per row */
+  @media (min-width: 1024px) {
+    .brand-logo-grid {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    
+    .logo-card {
+      padding: 20px;
+      aspect-ratio: 1;
+      min-height: 120px;
+      max-height: 160px;
+    }
+  }
+
+  /* Tablet: 2 cards per row */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .brand-logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .logo-card {
+      padding: 16px;
+      aspect-ratio: 1;
+      min-height: 100px;
+      max-height: 140px;
+    }
+  }
+
+  /* Mobile: 1 card per row */
+  @media (max-width: 767px) {
+    .brand-logo-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .logo-card {
+      padding: 16px;
+      aspect-ratio: 2;
+      min-height: 80px;
+      max-height: 120px;
+    }
+  }
+
+  /* Logo Card Base Styling */
+  .logo-card {
+    @apply bg-white dark:bg-brand-steel-navy rounded-xl shadow-lg transition-all duration-300 border border-transparent relative overflow-hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo-card:hover {
+    @apply shadow-2xl border-brand-sky-blue/20;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Legacy Card System for Backward Compatibility */
+  .premium-card {
+    @apply bg-white dark:bg-brand-steel-navy rounded-xl shadow-card transition-all duration-300 border border-transparent relative overflow-hidden;
+    padding: clamp(1rem, 2vw, 1.25rem);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    min-height: 160px;
+    height: auto;
+  }
+
+  .premium-card:hover {
+    @apply shadow-xl border-brand-sky-blue/20;
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive Card Grid System */
+  .card-grid {
+    @apply grid gap-4;
+  }
+
+  /* Desktop: 4 cards per row */
+  @media (min-width: 1024px) {
+    .card-grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .card-grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Tablet: 2-3 cards per row */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .card-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card-grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile: 1 card per row */
+  @media (max-width: 767px) {
+    .card-grid-4,
+    .card-grid-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Compact Stat Card */
+  .stat-card {
+    @apply premium-card text-center;
+    min-height: 180px;
+    max-height: 200px;
+    aspect-ratio: 1 / 1.1;
+  }
+
+  /* Premium Input System */
+  .input {
+    @apply w-full border border-secondary-300 dark:border-secondary-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-royal-blue focus:border-brand-royal-blue bg-white dark:bg-brand-steel-navy dark:text-white transition-all duration-300 hover:border-brand-sky-blue/50;
+    padding: clamp(0.75rem, 1.5vw, 0.875rem) clamp(0.875rem, 2vw, 1rem);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    min-height: 44px;
+  }
+
+  .label {
+    @apply block mb-2 font-medium text-secondary-700 dark:text-secondary-300;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  }
+  
+  /* Premium Grid System */
+  .grid-2 {
+    @apply grid lg:grid-cols-2 gap-8 items-center;
+  }
+
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4;
+  }
+
+  /* Premium Spacing System */
+  .space-y-premium > * + * {
+    margin-top: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  .space-y-large > * + * {
+    margin-top: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  /* Premium Typography Scale */
+  .text-large {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+  }
+
+  .text-small {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5;
+  }
+  
+  /* Premium Brand Gradients */
+  .brand-gradient {
+    @apply bg-gradient-to-r from-brand-oxford-blue to-brand-charcoal;
+  }
+  
+  .brand-gradient-light {
+    @apply bg-gradient-to-r from-brand-sky-blue to-brand-glacier-blue;
+  }
+
+  /* Premium Section Backgrounds */
+  .trusted-brands-light {
+    @apply bg-gradient-to-br from-secondary-50 to-white;
+  }
+
+  .trusted-brands-dark {
+    @apply bg-gradient-to-br from-brand-steel-navy to-brand-midnight-blue;
+  }
+
+  /* Premium Focus States */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-sky-blue focus:ring-offset-2 dark:focus:ring-offset-brand-midnight-blue;
+  }
+
+  /* Premium Interactive Elements */
+  .interactive-element {
+    @apply transition-all duration-300 cursor-pointer focus-ring;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .interactive-element:hover {
+    @apply scale-105;
+  }
+
+  .interactive-element:focus {
+    @apply focus-ring;
+  }
+
+  .interactive-element:active {
+    @apply scale-95;
+  }
+}
+
+/* Premium text gradient */
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-brand-oxford-blue to-brand-charcoal;
+}
+
+/* Dark mode specific styles */
+.dark .responsive-card {
+  @apply bg-brand-steel-navy border-brand-midnight-blue/20;
+}
+
+.dark .achievement-card {
+  @apply bg-brand-steel-navy border-brand-midnight-blue/20;
+}
+
+.dark .expertise-card {
+  @apply bg-brand-steel-navy border-brand-midnight-blue/20;
+}
+
+.dark .industry-card {
+  @apply bg-brand-steel-navy border-brand-midnight-blue/20;
+}
+
+.dark .logo-card {
+  @apply bg-brand-steel-navy border-brand-midnight-blue/20;
+}
+
+.dark .premium-card {
+  @apply bg-brand-steel-navy border-brand-midnight-blue/20;
+}
+
+.dark .input {
+  @apply bg-brand-steel-navy border-brand-midnight-blue text-white;
+}
+
+/* Premium animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(51, 155, 211, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(51, 155, 211, 0.6);
+  }
+}
+
+/* Premium Glassmorphism effects */
+.glass {
+  @apply backdrop-blur-lg bg-white/10 border border-white/20;
+}
+
+.glass-dark {
+  @apply backdrop-blur-lg bg-black/10 border border-black/20;
+}
+
+/* Premium hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Premium Micro-interactions */
+.micro-bounce {
+  animation: micro-bounce 2s infinite;
+}
+
+.micro-pulse {
+  animation: micro-pulse 2s infinite;
+}
+
+@keyframes micro-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes micro-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Premium Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Premium Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  .responsive-card {
+    transition: none !important;
+  }
+  
+  .achievement-card {
+    transition: none !important;
+  }
+  
+  .expertise-card {
+    transition: none !important;
+  }
+  
+  .industry-card {
+    transition: none !important;
+  }
+  
+  .logo-card {
+    transition: none !important;
+  }
+}
+
+/* Premium High contrast mode support */
+@media (prefers-contrast: high) {
+  .responsive-card, .achievement-card, .expertise-card, .industry-card, .logo-card, .premium-card, .stat-card {
+    @apply border-2 border-brand-deep-blue dark:border-brand-sky-blue;
+  }
+  
+  .btn-primary {
+    @apply border-2 border-white;
+  }
+}
+
+/* Premium responsive breakpoints */
+@media (max-width: 640px) {
+  .container {
+    @apply px-3;
+  }
+  
+  .section {
+    padding: clamp(2rem, 4vw, 2.5rem) 0;
+  }
+  
+  .premium-card, .stat-card {
+    padding: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .stat-card {
+    min-height: 160px;
+    max-height: 180px;
+  }
+
+  .grid-2 {
+    @apply gap-6;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .stat-card {
+    min-height: 170px;
+    max-height: 190px;
+  }
+
+  .grid-2 {
+    @apply gap-7;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    @apply max-w-6xl;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    @apply max-w-7xl;
+  }
+}
+
+/* Premium Button Hover Effects */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Premium Typography Hierarchy */
+.heading-primary {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.heading-secondary {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.heading-tertiary {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.body-large {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.body-regular {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.5;
+}
+
+.body-small {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.4;
+}
