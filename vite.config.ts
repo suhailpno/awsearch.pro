@@ -25,7 +25,10 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 1000,
+    assetsDir: 'assets',
+    copyPublicDir: true,
   },
+  publicDir: 'public',
   server: {
     port: 5173,
     host: true,
