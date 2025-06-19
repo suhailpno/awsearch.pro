@@ -7,6 +7,9 @@
     <title>AW Search Professional | Executive Search for Industry Transformation</title>
     <meta name="description" content="AW Search Professional - Global executive search firm identifying inspired leaders shaping tomorrow's ventures across tech, life sciences, and beyond." />
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'data:'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https:; frame-src 'self' https:;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -24,16 +27,26 @@
     <meta property="og:title" content="AW Search Professional | Executive Search">
     <meta property="og:description" content="Global executive search firm identifying inspired leaders shaping tomorrow's ventures across tech, life sciences, and beyond.">
     <meta property="og:site_name" content="AW Search Professional">
+    <meta property="og:url" content="https://awsearchpro.netlify.app">
+    <meta property="og:image" content="https://awsearchpro.netlify.app/og-image.jpg">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AW Search Professional | Executive Search">
     <meta name="twitter:description" content="Global executive search firm identifying inspired leaders shaping tomorrow's ventures across tech, life sciences, and beyond.">
+    <meta name="twitter:image" content="https://awsearchpro.netlify.app/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://awsearchpro.netlify.app">
     
     <!-- Professional Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/src/main.tsx" as="script">
+    <link rel="preload" href="/src/index.css" as="style">
     
     <!-- Structured Data for Business -->
     <script type="application/ld+json">
@@ -42,6 +55,7 @@
       "@type": "ProfessionalService",
       "name": "AW Search Professional",
       "description": "Global executive search firm identifying inspired leaders shaping tomorrow's ventures across tech, life sciences, and beyond.",
+      "url": "https://awsearchpro.netlify.app",
       "serviceType": "Executive Search",
       "areaServed": ["Singapore", "APAC", "Europe"],
       "hasOfferCatalog": {

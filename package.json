@@ -1,13 +1,14 @@
 {
-  "name": "academia-wise",
+  "name": "aw-search-professional",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:analyze": "vite build --mode analyze"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
