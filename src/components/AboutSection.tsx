@@ -171,10 +171,13 @@ const AboutSection: React.FC = () => {
                     25+
                   </motion.div>
                   
-                  {/* Label with gradient text */}
+                  {/* Label with gradient text - FIXED: Combined duplicate style attributes */}
                   <motion.p 
                     className="bg-gradient-to-r from-brand-sky-blue via-white to-brand-glacier-blue bg-clip-text text-transparent font-semibold mb-1"
-                    style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1rem)' }}
+                    style={{ 
+                      fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
+                      backgroundSize: '200% 200%'
+                    }}
                     animate={{
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                     }}
@@ -182,9 +185,6 @@ const AboutSection: React.FC = () => {
                       duration: 3,
                       repeat: Infinity,
                       ease: "linear"
-                    }}
-                    style={{
-                      backgroundSize: '200% 200%'
                     }}
                   >
                     Years of Excellence
