@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { Send, Calendar, Linkedin, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { EMAILJS_CONFIG } from '../utils/emailConfig';
 
 interface FormData {
   name: string;
@@ -21,15 +22,10 @@ const ContactSection: React.FC = () => {
     setSubmitStatus('idle');
     
     try {
-      // EmailJS configuration - Replace with your actual values
-      const serviceId = 'YOUR_SERVICE_ID';
-      const templateId = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
-      
       // Send email using EmailJS
       const result = await emailjs.send(
-        serviceId,
-        templateId,
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
         {
           from_name: data.name,
           from_email: data.email,
@@ -37,7 +33,7 @@ const ContactSection: React.FC = () => {
           message: data.message,
           to_name: 'AW Search Professional',
         },
-        publicKey
+        EMAILJS_CONFIG.PUBLIC_KEY
       );
       
       console.log('Email sent successfully:', result);
