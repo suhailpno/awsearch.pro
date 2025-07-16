@@ -4,10 +4,16 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  define: {
+    global: 'globalThis',
+  },
+  optimizeDeps: {
+    include: ['@emailjs/browser']
+  },
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: false,
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -15,6 +21,7 @@ export default defineConfig({
           animations: ['framer-motion'],
           forms: ['react-hook-form'],
           ui: ['@headlessui/react', 'lucide-react'],
+          emailjs: ['@emailjs/browser'],
         },
       },
     },

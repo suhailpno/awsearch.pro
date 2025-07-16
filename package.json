@@ -11,6 +11,7 @@
     "build:analyze": "vite build --mode analyze"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@headlessui/react": "^1.7.18",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.344.0",

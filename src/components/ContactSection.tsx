@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 import { Send, Calendar, Linkedin, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 
 interface FormData {
@@ -20,16 +21,33 @@ const ContactSection: React.FC = () => {
     setSubmitStatus('idle');
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // EmailJS configuration - Replace with your actual values
+      const serviceId = 'YOUR_SERVICE_ID';
+      const templateId = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
       
-      console.log('Form submitted:', data);
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          phone: data.phone || 'Not provided',
+          message: data.message,
+          to_name: 'AW Search Professional',
+        },
+        publicKey
+      );
+      
+      console.log('Email sent successfully:', result);
       setSubmitStatus('success');
       reset();
       
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
+      console.error('Email sending failed:', error);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
