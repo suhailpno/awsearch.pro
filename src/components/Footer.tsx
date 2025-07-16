@@ -92,8 +92,8 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3 text-brand-glacier-blue">
                 <Mail className="h-4 w-4 text-brand-sky-blue" />
-                <a href="mailto:contact@awsearchprofessional.com" className="body-small hover:text-brand-sky-blue transition-colors">
-                  contact@awsearchprofessional.com
+                <a href="mailto:paul@awsearch.pro" className="body-small hover:text-brand-sky-blue transition-colors">
+                  paul@awsearch.pro
                 </a>
               </div>
             </motion.div>
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
                 <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </motion.a>
               <motion.a 
-                href="https://calendar.app.google/7u9CUX6KpQGAaL776"
+                href="https://calendar.app.google/Mc8eZhHu3hP1LTQ6A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-brand-steel-navy rounded-xl flex items-center justify-center text-brand-sky-blue hover:bg-brand-sky-blue hover:text-brand-midnight-blue transition-all duration-300 group hover-lift interactive-element"

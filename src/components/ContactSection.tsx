@@ -140,7 +140,7 @@ const ContactSection: React.FC = () => {
                       icon: <Calendar className="w-5 h-5" />,
                       title: "Book Direct",
                       content: "Schedule a Strategic Call",
-                      link: "https://calendar.app.google/7u9CUX6KpQGAaL776",
+                      link: "https://calendar.app.google/Mc8eZhHu3hP1LTQ6A",
                       delay: 0.3
                     },
                     {

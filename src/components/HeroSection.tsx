@@ -265,7 +265,7 @@ const HeroSection: React.FC = () => {
             </motion.a>
             
             <motion.a 
-              href="https://calendar.app.google/7u9CUX6KpQGAaL776"
+              href="https://calendar.app.google/Mc8eZhHu3hP1LTQ6A"
               target="_blank"
               rel="noopener noreferrer"
               className="btn border-2 border-white text-white hover:bg-white hover:text-brand-midnight-blue font-semibold backdrop-blur-sm w-full sm:w-auto group relative overflow-hidden"

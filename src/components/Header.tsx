@@ -229,7 +229,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           <ThemeToggle />
           
           <motion.a 
-            href="https://calendar.app.google/7u9CUX6KpQGAaL776"
+            href="https://calendar.app.google/Mc8eZhHu3hP1LTQ6A"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary group relative overflow-hidden text-sm px-4 py-2.5"
@@ -408,7 +408,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
                   </motion.a>
                   
                   <motion.a 
-                    href="https://calendar.app.google/7u9CUX6KpQGAaL776"
+                    href="https://calendar.app.google/Mc8eZhHu3hP1LTQ6A"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary w-full text-center group relative overflow-hidden text-sm"

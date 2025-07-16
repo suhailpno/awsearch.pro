@@ -178,7 +178,7 @@ const ExpertiseSection: React.FC = () => {
                 Let's discuss your specific leadership needs and how we can help you find exceptional talent.
               </p>
               <motion.a 
-                href="https://calendar.app.google/7u9CUX6KpQGAaL776"
+                href="https://calendar.app.google/Mc8eZhHu3hP1LTQ6A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary group interactive-element inline-flex"

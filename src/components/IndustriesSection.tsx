@@ -206,7 +206,7 @@ const IndustriesSection: React.FC = () => {
                 Our network spans across emerging sectors and traditional industries undergoing digital transformation.
               </p>
               <motion.a 
-                href="https://calendar.app.google/7u9CUX6KpQGAaL776"
+                href="https://calendar.app.google/Mc8eZhHu3hP1LTQ6A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn bg-brand-sky-blue text-brand-midnight-blue hover:bg-white font-semibold group interactive-element inline-flex"
