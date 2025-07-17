@@ -8,7 +8,7 @@ export default defineConfig({
     global: 'globalThis',
   },
   optimizeDeps: {
-    include: ['@emailjs/browser']
+    include: ['@emailjs/browser', 'ogl']
   },
   build: {
     outDir: 'dist',
