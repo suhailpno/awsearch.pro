@@ -44,6 +44,15 @@ const ContactSection: React.FC = () => {
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
       console.error('Email sending failed:', error);
+      
+      // Check for specific EmailJS errors
+      if (error && typeof error === 'object' && 'status' in error) {
+        const emailError = error as { status: number; text: string };
+        if (emailError.status === 412 && emailError.text.includes('Invalid grant')) {
+          console.error('EmailJS authentication error - Gmail account needs to be reconnected');
+        }
+      }
+      
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
@@ -253,7 +262,10 @@ const ContactSection: React.FC = () => {
                       exit={{ opacity: 0, scale: 0.9 }}
                     >
                       <AlertCircle className="h-4 w-4 text-error-500" />
-                      <p className="text-error-700 text-sm">Something went wrong. Please try again.</p>
+                      <div className="text-error-700 text-sm">
+                        <p className="font-medium">Unable to send message at the moment.</p>
+                        <p className="text-xs mt-1">Please try again later or contact us directly at paul@awsearch.pro</p>
+                      </div>
                     </motion.div>
                   )}
                 </div>
