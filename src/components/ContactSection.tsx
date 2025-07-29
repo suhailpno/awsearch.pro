@@ -138,7 +138,7 @@ const ContactSection: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    Connect with Paul Williams
+                    Connect with Us
                   </motion.h3>
                 </div>
                 
@@ -155,7 +155,7 @@ const ContactSection: React.FC = () => {
                     {
                       icon: <Linkedin className="w-5 h-5" />,
                       title: "LinkedIn",
-                      content: "Connect with Paul",
+                      content: "Connect with Us",
                       link: "https://www.linkedin.com/in/pw11/",
                       delay: 0.4
                     },
