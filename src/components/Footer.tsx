@@ -90,12 +90,6 @@ const Footer: React.FC = () => {
                 <MapPin className="h-4 w-4 text-brand-sky-blue" />
                 <span className="body-small">Singapore • APAC </span>
               </div>
-              <div className="flex items-center space-x-3 text-brand-glacier-blue">
-                <Mail className="h-4 w-4 text-brand-sky-blue" />
-                <a href="mailto:paul@awsearch.pro" className="body-small hover:text-brand-sky-blue transition-colors">
-                  info@awsearch.pro
-                </a>
-              </div>
             </motion.div>
             
             {/* Social Links */}
